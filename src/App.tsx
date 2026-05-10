@@ -134,7 +134,6 @@ function App() {
 
   const sendOrder = useMemo(() => snapshotRef.current, [phase, elapsed])
 
-  const sent = sendOrder.filter(s => elapsed >= s.sendAt)
   const upcoming = sendOrder.filter(s => elapsed < s.sendAt)
   const currentSend = sendOrder.find(s => elapsed === s.sendAt && elapsed >= 0)
   const nextUp = upcoming[0] ?? null
